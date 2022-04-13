@@ -22,6 +22,8 @@ namespace WebApplication3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSession();
+            //session 서비스에 등록함
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +40,8 @@ namespace WebApplication3
             }
 
             app.UseStaticFiles();
+            app.UseSession();
+            //이 application에서 사용하겠다
 
             app.UseMvc(routes =>
             {
